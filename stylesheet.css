@@ -1,0 +1,453 @@
+/* ========================= */
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #0c0c0c, #1a1a1a);
+    color: #fff;
+    line-height: 1.6;
+    animation: backgroundFlow 10s infinite alternate;
+}
+
+/* Background Animation */
+@keyframes backgroundFlow {
+    0% {
+        background: linear-gradient(135deg, #0c0c0c, #1a1a1a);
+    }
+    100% {
+        background: linear-gradient(135deg, #001f3f, #1a1a1a);
+    }
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* ========================= */
+/* Navbar Styles */
+.navbar {
+    width: 100vw;
+    max-width: 100%;
+    padding: 15px 1px;
+    background-color: #0f1e3d;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    border-bottom: 1px solid #00bfff;
+    position: fixed; /* Optional: To make it sticky */
+    top: 0;
+    left: 0;
+    z-index: 999;
+}
+
+.navbar h1 {
+    color: #00bfff;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 6px;
+    
+}
+
+.navbar li {
+    margin: 0;
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    transition: 0.3s;
+    padding: 8px 15px;
+    border-radius: 8px;
+}
+
+.navbar a:hover {
+    background-color: #00bfff;
+    color: #1a1a1a;
+}
+
+/* ========================= */
+/* Hero / Home Section */
+#home {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 80px 20px;
+    flex-wrap: wrap;
+}
+
+/* Profile Image - Circular with Glow */
+.profile-container {
+    position: relative;
+    width: 250px; /* Smaller for better positioning */
+    height: 250px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 0 20px #00bfff;
+    animation: glow 2.5s infinite alternate;
+    margin-left: auto; /* Push to the right */
+    margin-top: -20px; /* Move slightly up */
+}
+.home-content {
+    display: flex;
+    justify-content: space-between; /* Keeps text and profile apart */
+    align-items: center;
+    width: 100%;
+    gap: 20px; /* Optional: Adds spacing between text and image */
+}
+
+
+
+.profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 📱 Mobile View Fix */
+@media (max-width: 768px) {
+    .profile-container {
+        width: 180px; /* Reduce size for smaller screens */
+        height: 180px;
+        margin: 0 auto; /* Center it in mobile */
+        margin-top: 10px; /* Adjust spacing */
+    }
+
+    .home-content {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center everything */
+        text-align: center;
+    }
+}
+
+
+/* Glow Effect */
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 20px #00bfff;
+    }
+    100% {
+        box-shadow: 0 0 40px #1e90ff;
+    }
+}
+
+/* Text Content on Right */
+.text-content {
+    max-width: 600px;
+    text-align: left;
+}
+
+.text-content h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.text-content h1 {
+    font-size: 48px;
+    margin-top: 10px;
+    background: linear-gradient(90deg, #00bfff, #1e90ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textGlow 3s infinite alternate;
+}
+
+/* Text Glow Animation */
+@keyframes textGlow {
+    0% {
+        text-shadow: 0 0 10px #00bfff;
+    }
+    100% {
+        text-shadow: 0 0 20px #1e90ff;
+    }
+}
+
+.text-content p {
+    font-size: 18px;
+    margin-top: 10px;
+    line-height: 1.8;
+    color: #ddd;
+}
+
+/* Button Styles */
+.btn {
+    background: linear-gradient(90deg, #00bfff, #1e90ff);
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    margin-top: 20px;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: linear-gradient(90deg, #1e90ff, #00bfff);
+    transform: scale(1.05);
+}
+
+/* ========================= */
+/* About Section */
+#about {
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #001f3f, #1a1a1a);
+    animation: backgroundShift 5s infinite alternate;
+    text-align: center;
+}
+
+/* About Section Background Animation */
+@keyframes backgroundShift {
+    0% {
+        background: linear-gradient(135deg, #001f3f, #1a1a1a);
+    }
+    100% {
+        background: linear-gradient(135deg, #00264d, #1a1a1a);
+    }
+}
+
+#about h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: #00bfff;
+}
+
+/* About Content */
+.about-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.about-content .text {
+    max-width: 600px;
+    font-size: 18px;
+    line-height: 1.8;
+    text-align: left;
+}
+
+/* ========================= */
+/* Skills Section */
+#skills {
+    padding: 80px 20px;
+    text-align: center;
+    background: #0b1120;
+}
+
+#skills h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: #00bfff;
+}
+
+/* Skills Card */
+.skills-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.skill-card {
+    background-color: #1a1a1a;
+    border-radius: 15px;
+    padding: 20px;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Skill Bar */
+.skill-bar {
+    margin-bottom: 1.5rem;
+    background-color: #333;
+    border-radius: 20px;
+    height: 30px;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Skill Fill with Animation */
+/* Skill Fill with Animation */
+.skill-fill {
+    height: 100%;
+    border-radius: 20px;
+    background: linear-gradient(to right, #00f, #00bfff);
+    width: 0; /* Initial width to 0 for animation */
+    transition: width 1.5s ease-in-out;
+}
+
+
+/* Skill Label */
+.skill-label {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/* ========================= */
+/* Projects Section */
+#projects {
+    padding: 80px 20px;
+    background-color: #0b1120;
+    text-align: center;
+    color: #fff;
+}
+
+#projects h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: #00bfff;
+    text-align: center; /* Centering the heading */
+    margin-top: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+
+/* Project Container */
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+/* Project Card */
+.project-card {
+    background-color: #1a1a2e;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease-in-out;
+    text-align: left;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 191, 255, 0.6);
+}
+
+/* Project Image */
+.project-img {
+    width: 100%;
+    height: 200px; /* Increase height for a better fit */
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    object-fit: contain; /* Ensures the whole image fits without cropping */
+    background-color: #000; /* Optional: Adds a fallback background color */
+}
+
+
+
+/* Project Title */
+.project-card h3 {
+    font-size: 1.5rem;
+    color: #00f;
+}
+
+/* Project Description */
+.project-card p {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    color: #ddd;
+    line-height: 1.6;
+}
+
+/* ========================= */
+/* Contact Section */
+#contact {
+    padding: 80px 20px;
+    text-align: center;
+    background: linear-gradient(135deg, #001f3f, #1a1a1a);
+}
+
+#contact h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #00bfff;
+}
+
+/* Form Styles */
+form input,
+form textarea {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: #1c1c1c;
+    color: #fff;
+    transition: 0.3s ease-in-out;
+}
+
+form input:focus,
+form textarea:focus {
+    background: #00264d;
+    outline: none;
+}
+
+/* Contact Button */
+form .btn {
+    width: 100%;
+    cursor: pointer;
+}
+
+/* ========================= */
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background: #1c1c1c;
+    color: #ddd;
+}
+
+/* ========================= */
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    #home {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profile-container {
+        margin-bottom: 20px;
+    }
+
+    .about-content {
+        flex-direction: column;
+    }
+
+    .skills-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .projects-container {
+        grid-template-columns: 1fr;
+    }
+}
